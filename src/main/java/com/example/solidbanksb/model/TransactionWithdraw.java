@@ -17,7 +17,7 @@ public class TransactionWithdraw {
     TransactionDao transactionDao;
     @Autowired
     AccountWithdrawService accountWithdrawService;
-    public void execute(Account account, double amount){
+    public void execute(Account account, double amount) throws Exception {
         accountWithdrawService.withdraw(amount, account);
 
         Transaction transaction = new Transaction(new Date(),TransactionType.WITHDRAW, account);

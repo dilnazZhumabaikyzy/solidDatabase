@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Component
 public class MemoryAccountDao implements AccountDao{
@@ -30,9 +31,15 @@ public class MemoryAccountDao implements AccountDao{
     @Override
     public List<Account> getClientAccountsByType(String clientId, AccountType accountType) {
 
-        return accountList.stream()
-                .filter(account -> account.getAccountType().equals(accountType))
+        List<Account> filteredAccounts = accountList.stream()
+                .filter(account -> account.getClientId().equals(clientId) && account.getAccountType().equals(accountType))
                 .toList();
+
+        if (filteredAccounts.isEmpty()) {
+            throw new NoSuchElementException("No accounts found for client " + clientId + " with account type " + accountType);
+        }
+
+        return filteredAccounts;
     }
 
     @Override

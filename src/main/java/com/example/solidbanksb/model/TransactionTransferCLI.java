@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class TransactionTransferCLI {
     TransactionTransfer transactionTransfer;
 
 
-    public void transfer(double transferAmount, AccountType fromAccountType, String fromAccountNumber, String clientId, AccountType toAccountType, String toAccountNumber, String toClientId,TransferType transferType) {
+    public void transfer(double transferAmount, AccountType fromAccountType, String fromAccountNumber, String clientId, AccountType toAccountType, String toAccountNumber, String toClientId,TransferType transferType) throws Exception {
         if(!Objects.equals(clientId, toClientId))
             transferAmount *= 1.15;
 
@@ -30,14 +31,14 @@ public class TransactionTransferCLI {
             Account fromAccount = fromAccounts.stream()
                     .filter(acc -> acc.getId().equals(fromAccountNumber))
                     .findFirst()
-                    .orElse(null);
+                    .orElseThrow(() -> new NoSuchElementException("Account not found: " + fromAccountNumber));
 
             List<Account> toAccounts = accountListingService.getClientAccountsByType(toClientId,toAccountType);
 
             Account toAccount = toAccounts.stream()
                     .filter(acc -> acc.getId().equals(toAccountNumber))
                     .findFirst()
-                    .orElse(null);
+                    .orElseThrow(() -> new NoSuchElementException("Account not found: " + toAccountNumber));
 
             transactionTransfer.execute(fromAccount, toAccount, transferAmount);
 

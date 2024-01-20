@@ -13,11 +13,10 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
     private AccountDao accountDao;
 
     @Override
-    public void withdraw(double amount, Account account) {
+    public void withdraw(double amount, Account account) throws Exception {
         double newBalance = account.getBalance() - amount;
         if(newBalance < 0){
-            System.out.println("Not enough money!");
-            return;
+           throw new Exception("Unable to complete the withdrawal operation. Account balance is too low.");
         }
         account.setBalance(newBalance);
     }

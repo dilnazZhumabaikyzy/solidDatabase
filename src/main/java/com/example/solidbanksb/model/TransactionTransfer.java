@@ -21,7 +21,7 @@ public class TransactionTransfer {
     AccountWithdrawService accountWithdrawService;
 
 
-    public void execute(Account fromAccount, Account toAccount, double transferAmount) {
+    public void execute(Account fromAccount, Account toAccount, double transferAmount) throws Exception {
         accountWithdrawService.withdraw(transferAmount, fromAccount);
         accountDepositService.deposit(transferAmount, toAccount);
 
