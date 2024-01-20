@@ -1,0 +1,18 @@
+package com.example.solidbanksb.service;
+
+
+import com.example.solidbanksb.model.Account;
+import com.example.solidbanksb.model.AccountType;
+import com.example.solidbanksb.model.AccountWithdraw;
+
+import java.util.List;
+
+public interface AccountListingService {
+    Account getClientAccount(String clientId, String accountId);
+    AccountWithdraw getClientWithdrawAccount(String clientId, String accountId);
+    List<Account> getClientAccounts(String clientId);
+    List<Account> getClientAccountsByType(String clientId, AccountType accountType);
+
+    AccountWithdraw getClientDepositAccount(String clientId, String accountId);
+}
+
