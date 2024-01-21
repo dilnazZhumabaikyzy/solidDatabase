@@ -37,7 +37,7 @@ public class SolidbankSbApplication  implements CommandLineRunner {
         while (running){
             try {
                 AccountBasicCli accountBasicCli = context.getBean(AccountBasicCli.class);
-                TransactionDepositCLI transactionDepositCLI = context.getBean(TransactionDepositCLI.class);
+                TransactionDepositCLI  transactionDepositCLI = context.getBean(TransactionDepositCLI.class);
                 TransactionWithdrawCLI transactionWithdrawCLI = context.getBean(TransactionWithdrawCLI.class);
                 TransactionTransferCLI transactionTransferCLI = context.getBean(TransactionTransferCLI.class);
                 MyCLI myCLI = context.getBean(MyCLI.class);

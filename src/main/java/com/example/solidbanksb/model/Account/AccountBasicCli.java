@@ -13,12 +13,10 @@ import java.util.List;
 
 @Component
 public class AccountBasicCli {
-    CreateAccountOperationUI createAccountOperationUI;
     BankCore bankCore;
     AccountListingService accountListingService;
     @Autowired
-    public AccountBasicCli(CreateAccountOperationUI createAccountOperationUI, BankCore bankCore, AccountListingService accountListingService) {
-        this.createAccountOperationUI = createAccountOperationUI;
+    public AccountBasicCli(BankCore bankCore, AccountListingService accountListingService) {
         this.bankCore = bankCore;
         this.accountListingService = accountListingService;
     }
