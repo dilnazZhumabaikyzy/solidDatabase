@@ -1,12 +1,14 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.TransactionDeposit;
 
 import com.example.solidbanksb.DAO.TransactionDao;
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.Transaction.Transaction;
+import com.example.solidbanksb.model.Transaction.TransactionType;
 import com.example.solidbanksb.service.AccountDepositService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 @Component
@@ -20,7 +22,7 @@ public class TransactionDeposit {
     public void execute(Account account, double amount){
         accountDepositService.deposit(amount, account);
 
-        Transaction transaction = new Transaction(new Date(),TransactionType.DEPOSIT, account);
+        Transaction transaction = new Transaction(new Date(), TransactionType.DEPOSIT, account);
         transactionDao.addTransaction(transaction);
 
         System.out.println("Transaction succesfully created");

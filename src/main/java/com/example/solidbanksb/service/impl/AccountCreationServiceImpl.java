@@ -1,7 +1,10 @@
 package com.example.solidbanksb.service.impl;
 
 import com.example.solidbanksb.DAO.AccountDao;
-import com.example.solidbanksb.model.*;
+import com.example.solidbanksb.model.Account.AccountType;
+import com.example.solidbanksb.model.Account.CheckingAccount;
+import com.example.solidbanksb.model.Account.FixedAccount;
+import com.example.solidbanksb.model.Account.SavingAccount;
 import com.example.solidbanksb.service.AccountCreationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

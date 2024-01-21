@@ -1,5 +1,5 @@
 package com.example.solidbanksb.model;
 
-public interface CLIUI extends CreateAccountOperationUI, WithdrawDepositOperationCLIUI, TransferOperationCLIUI{
+public interface CLIUI extends CreateAccountOperationUI, WithdrawDepositOperationCLIUI, TransferOperationCLIUI {
     int chooseTheOption();
 }

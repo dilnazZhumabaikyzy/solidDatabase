@@ -1,6 +1,6 @@
 package com.example.solidbanksb.service;
 
-import com.example.solidbanksb.model.AccountType;
+import com.example.solidbanksb.model.Account.AccountType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

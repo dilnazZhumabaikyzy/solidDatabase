@@ -1,6 +1,9 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.TransactionTransfer;
 
 import com.example.solidbanksb.DAO.TransactionDao;
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.Transaction.Transaction;
+import com.example.solidbanksb.model.Transaction.TransactionType;
 import com.example.solidbanksb.service.AccountDepositService;
 import com.example.solidbanksb.service.AccountWithdrawService;
 import lombok.AllArgsConstructor;
@@ -25,7 +28,7 @@ public class TransactionTransfer {
         accountWithdrawService.withdraw(transferAmount, fromAccount);
         accountDepositService.deposit(transferAmount, toAccount);
 
-        Transaction transaction = new Transaction(new Date(),TransactionType.TRANSFER, fromAccount);
+        Transaction transaction = new Transaction(new Date(), TransactionType.TRANSFER, fromAccount);
         transactionDao.addTransaction(transaction);
 
         System.out.println("Transaction succesfully created");

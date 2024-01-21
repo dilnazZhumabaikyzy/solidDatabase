@@ -1,8 +1,8 @@
 package com.example.solidbanksb.service.impl;
 
 import com.example.solidbanksb.DAO.AccountDao;
-import com.example.solidbanksb.model.Account;
-import com.example.solidbanksb.model.AccountWithdraw;
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.TransactionWithdraw.AccountWithdraw;
 import com.example.solidbanksb.service.AccountDepositService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.Account;
 
 public enum AccountType {
     CHECKING("CHECKING"),

@@ -1,9 +1,9 @@
 package com.example.solidbanksb.service;
 
-import com.example.solidbanksb.model.AccountType;
+import com.example.solidbanksb.model.Account.AccountType;
 import com.example.solidbanksb.model.CLIUI;
-import com.example.solidbanksb.model.TransferResult;
-import com.example.solidbanksb.model.TransferType;
+import com.example.solidbanksb.model.TransactionTransfer.TransferResult;
+import com.example.solidbanksb.model.TransactionTransfer.TransferType;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;

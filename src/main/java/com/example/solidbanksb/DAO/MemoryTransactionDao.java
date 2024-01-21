@@ -1,7 +1,6 @@
 package com.example.solidbanksb.DAO;
 
-import com.example.solidbanksb.model.Account;
-import com.example.solidbanksb.model.Transaction;
+import com.example.solidbanksb.model.Transaction.Transaction;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.Transaction;
 
+import com.example.solidbanksb.model.Account.Account;
 import lombok.AllArgsConstructor;
 
 import java.util.Date;

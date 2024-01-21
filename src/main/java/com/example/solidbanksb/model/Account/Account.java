@@ -1,6 +1,5 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.Account;
 
-import com.example.solidbanksb.model.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

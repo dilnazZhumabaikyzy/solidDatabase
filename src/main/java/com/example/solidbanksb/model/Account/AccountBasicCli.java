@@ -1,6 +1,9 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.Account;
 
 
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.Account.AccountType;
+import com.example.solidbanksb.model.CreateAccountOperationUI;
 import com.example.solidbanksb.service.AccountListingService;
 import com.example.solidbanksb.service.BankCore;
 import org.springframework.beans.factory.annotation.Autowired;

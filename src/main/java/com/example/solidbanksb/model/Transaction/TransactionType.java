@@ -1,4 +1,4 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.Transaction;
 
 public enum TransactionType {
     DEPOSIT("DEPOSIT"),

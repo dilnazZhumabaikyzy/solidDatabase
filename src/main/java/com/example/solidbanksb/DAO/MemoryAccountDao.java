@@ -1,8 +1,8 @@
 package com.example.solidbanksb.DAO;
 
-import com.example.solidbanksb.model.Account;
-import com.example.solidbanksb.model.AccountType;
-import com.example.solidbanksb.model.AccountWithdraw;
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.Account.AccountType;
+import com.example.solidbanksb.model.TransactionWithdraw.AccountWithdraw;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

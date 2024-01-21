@@ -1,5 +1,8 @@
-package com.example.solidbanksb.model;
+package com.example.solidbanksb.model.TransactionTransfer;
 
+import com.example.solidbanksb.model.Account.Account;
+import com.example.solidbanksb.model.Account.AccountType;
+import com.example.solidbanksb.model.TransferOperationCLIUI;
 import com.example.solidbanksb.service.AccountListingService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +24,7 @@ public class TransactionTransferCLI {
     TransactionTransfer transactionTransfer;
 
 
-    public void transfer(double transferAmount, AccountType fromAccountType, String fromAccountNumber, String clientId, AccountType toAccountType, String toAccountNumber, String toClientId,TransferType transferType) throws Exception {
+    public void transfer(double transferAmount, AccountType fromAccountType, String fromAccountNumber, String clientId, AccountType toAccountType, String toAccountNumber, String toClientId, TransferType transferType) throws Exception {
         if(!Objects.equals(clientId, toClientId))
             transferAmount *= 1.15;
 
