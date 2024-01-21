@@ -1,8 +1,8 @@
-#Solid Bank CLI
+# Solid Bank CLI
 The project simulates various banking transactions, including transfers, deposits, withdrawals and loan-related transactions, as well as account creation using the CLI.
-#Prerequisites
+## Prerequisites
 Java 8, Maven, Spring Tool Suite, IntelliJ IDEA
-#Local Setup
+## Local Setup
 1. Clone the repository:
    ```
    git@github.com:dilnazZhumabaikyzy/solidbank.git
