@@ -3,7 +3,7 @@ package com.example.solidbanksb.service;
 
 import com.example.solidbanksb.model.Account.Account;
 import com.example.solidbanksb.model.Account.AccountType;
-import com.example.solidbanksb.model.TransactionWithdraw.AccountWithdraw;
+import com.example.solidbanksb.model.Account.AccountWithdraw;
 
 import java.util.List;
 

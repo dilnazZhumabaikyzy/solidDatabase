@@ -1,6 +1,8 @@
 package com.example.solidbanksb;
 
+import com.example.solidbanksb.model.Account.Account;
 import com.example.solidbanksb.model.Account.AccountBasicCli;
+import com.example.solidbanksb.model.Account.AccountRepository;
 import com.example.solidbanksb.model.Account.AccountType;
 import com.example.solidbanksb.model.TransactionDeposit.TransactionDepositCLI;
 import com.example.solidbanksb.model.TransactionTransfer.TransactionTransferCLI;
@@ -14,6 +16,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import javax.persistence.EntityManager;
+
 @SpringBootApplication
 
 public class SolidbankSbApplication  implements CommandLineRunner {
@@ -21,6 +25,8 @@ public class SolidbankSbApplication  implements CommandLineRunner {
     @Autowired
     ApplicationContext context;
 
+    @Autowired
+    private AccountRepository accountRepository;
     public static void main(String[] args) {
         SpringApplication.run(SolidbankSbApplication.class);
     }
@@ -30,7 +36,7 @@ public class SolidbankSbApplication  implements CommandLineRunner {
         boolean running = true;
         String clientId = "1";
 
-        String helpMessage = "1 - showAccounts\n2 - create account\n3 - deposit\n4 - withdraw\n5 - transfer\n6 - this message\n7 - exit\n";
+        String helpMessage = "1 - showAccounts\n2 - create account\n3 - deposit\n4 - withdraw\n5 - transfer\n6 - this message\n7 - exit\n8 - test accountRepository";
         System.out.println("Welcome to CLIBank!");
         System.out.println(helpMessage);
         System.out.println("Please enter the command number:");
@@ -102,11 +108,31 @@ public class SolidbankSbApplication  implements CommandLineRunner {
                     case "7":
                         running = false;
                         System.out.println("Exit");
+                    case "8":
+                        for (Account i: accountRepository.findAll()) {
+                            System.out.println(i.toString());
+                        }
+                        break;
+                    case "9":
+                        accountBasicCli.createAccountRequest(AccountType.CHECKING, clientId);
+                        break;
+                    case "10":
+                        Account acc = new Account();
+//                        acc.setId(1L);
+                        acc.setAccountType(AccountType.CHECKING);
+                        acc.setBalance(0.0);
+                        acc.setWithdrawAllowed(true);
+                        acc.setClientId(clientId);
+                        System.out.println(acc.getId());
+
+                        accountRepository.save(acc);
+                        break;
 
                 }
             }
             catch (Exception e){
                 System.out.println("Wrong input: " + e.getMessage());
+                System.out.println(e.fillInStackTrace());
             }
         }
     }

@@ -3,7 +3,7 @@ package com.example.solidbanksb.service.impl;
 import com.example.solidbanksb.DAO.AccountDao;
 import com.example.solidbanksb.model.Account.Account;
 import com.example.solidbanksb.model.Account.AccountType;
-import com.example.solidbanksb.model.TransactionWithdraw.AccountWithdraw;
+import com.example.solidbanksb.model.Account.AccountWithdraw;
 import com.example.solidbanksb.service.AccountListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

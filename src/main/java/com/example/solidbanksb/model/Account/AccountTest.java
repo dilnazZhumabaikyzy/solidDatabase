@@ -9,11 +9,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "ACCOUNT")
-public class Account {
+@Table(name = "ACCOUNTTEST")
+public class AccountTest {
 
-    @GeneratedValue
-    private  @Id Long id;
+    private  @Id String id;
     private AccountType accountType;
     private String clientId;
     private double balance = 0;
@@ -36,7 +35,7 @@ public class Account {
         this.withdrawAllowed = withdrawAllowed;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

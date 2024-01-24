@@ -1,10 +1,7 @@
 package com.example.solidbanksb.service.impl;
 
 import com.example.solidbanksb.DAO.AccountDao;
-import com.example.solidbanksb.model.Account.AccountType;
-import com.example.solidbanksb.model.Account.CheckingAccount;
-import com.example.solidbanksb.model.Account.FixedAccount;
-import com.example.solidbanksb.model.Account.SavingAccount;
+import com.example.solidbanksb.model.Account.*;
 import com.example.solidbanksb.service.AccountCreationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,12 +11,21 @@ public class AccountCreationServiceImpl implements AccountCreationService {
     @Autowired
     AccountDao accountDao;
     @Override
-    public void create(AccountType accountType, long bankId, String clientId, String accountId) {
+    public void create(String accountId, AccountType accountType,String clientId) {
         switch (accountType){
-            case CHECKING -> accountDao.createNewAccount(new CheckingAccount(accountType, accountId, clientId, 0.0, true));
-            case FIXED -> accountDao.createNewAccount(new FixedAccount(accountType, accountId, clientId, 0.0, false));
-            case SAVING -> accountDao.createNewAccount(new SavingAccount(accountType, accountId, clientId, 0.0, true));
-            default -> System.out.println("Wrong Input");
+//            case CHECKING -> accountDao.createNewAccount(new CheckingAccount(accountType, clientId, 0.0, true));
+//            case FIXED -> accountDao.createNewAccount(new FixedAccount(accountType, clientId,   0.0, false));
+//            case SAVING -> accountDao.createNewAccount(new SavingAccount(accountType, clientId,   0.0, true));
+            default -> {
+                Account acc = new Account();
+                acc.setId(Long.valueOf(accountId));
+                acc.setAccountType(accountType);
+                acc.setBalance(0.0);
+                acc.setWithdrawAllowed(true);
+                acc.setClientId(clientId);
+                accountDao.createNewAccount(acc);
+//                System.out.println("Wrong Input");
+            }
         }
     }
 }

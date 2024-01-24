@@ -5,5 +5,5 @@ import com.example.solidbanksb.model.Account.AccountType;
 
 
 public interface AccountCreationService {
-    void create(AccountType accountType, long bankId, String clientId, String accountId);
+    void create(String accountId, AccountType accountType, String clientId);
 }
